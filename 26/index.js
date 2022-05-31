@@ -29,11 +29,13 @@ const js = {
 };
 
 // TODO: Destructure the nested object 'js'
-const {
-  tools: {
-    frameworks: { framework1, framework2 },
-  },
-} = js;
+// const {
+//   tools: {
+//     frameworks: { framework1, framework2 },
+//   },
+// } = js;
+// better way:
+const { framework1, framework2 } = js.tools.frameworks;
 console.log(framework1); // <= AngularJS
 console.log(framework2); // <= Vue.js
 
