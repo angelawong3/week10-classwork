@@ -10,24 +10,31 @@ function Student(first, last, age) {
   this.displayGrade = function (grade) {
     const input = grade;
     if (!input) {
-      throw new Error('no grade provided');
+      throw new Error("no grade provided");
     }
     let response;
     // Return a letter grade if a number grade was passed
     // Ex. 95 => 'A'
-    if (typeof input === 'number') {
+    if (typeof input === "number") {
       // TODO: Add logic here to return a single letter grade
+      if (inRange(input, 90, 100)) {
+        response = "A";
+      }
       return response;
     }
     // Return a range if a letter grade was passed
     // Ex. 'A' => '90 - 100'
-    if (typeof input === 'string') {
+    if (typeof input === "string") {
       // TODO: Add logic here to return range as a string
+      switch (input) {
+        case "B":
+          response = "80 - 89";
+      }
       return response;
     }
   };
 }
 
-const John = new Student('John', 'Appleseed', '30');
-console.log('John.displayGrade():', John.displayGrade(95));
-console.log('John.displayGrade():', John.displayGrade('B'));
+const John = new Student("John", "Appleseed", "30");
+console.log("John.displayGrade():", John.displayGrade(95));
+console.log("John.displayGrade():", John.displayGrade("B"));
