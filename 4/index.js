@@ -6,10 +6,17 @@ function Character(name, type, age, strength, hitpoints) {
   this.age = age;
   this.strength = strength;
   this.hitpoints = hitpoints;
+  // we can just put the below new prototype function into this object
+  // this.printStats = function () {
+  //   console.log(
+  //     `Name: ${this.name}\nProfession: ${this.type}\nAge: ${this.age}\nStrength: ${this.strength}\nHitPoints: ${this.hitpoints}`
+  //   );
+  //   console.log("\n-------------\n");
+  // };
 }
 
 // TODO: Add a comment describing the purpose of `.prototype` in this method declaration
-// creating new function to a prototype
+// Adding a new printStats function on the Character class
 Character.prototype.printStats = function () {
   console.log(
     `Name: ${this.name}\nProfession: ${this.type}\nAge: ${this.age}\nStrength: ${this.strength}\nHitPoints: ${this.hitpoints}`
@@ -18,7 +25,7 @@ Character.prototype.printStats = function () {
 };
 
 // TODO: Add a comment describing the functionality of this method
-//
+// Method which determines if 'hitpoints' are greater than zero and returns a boolean depending on the outcome
 Character.prototype.isAlive = function () {
   if (this.hitpoints > 0) {
     console.log(`${this.name} is still alive!`);
@@ -30,7 +37,7 @@ Character.prototype.isAlive = function () {
 };
 
 // TODO: Add a comment describing the functionality of this method
-//
+// Method which takes in a second object and decrease their 'hitpoints' by this character's strength
 Character.prototype.attack = function (character2) {
   character2.hitpoints -= this.strength;
 };
