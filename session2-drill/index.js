@@ -12,3 +12,14 @@
 
 // Input: 'cow'
 // Error
+
+function negator(str) {
+  const num = parseInt(str);
+
+  if (typeof str === "string") {
+    throw new Error("Error, please provide a valid number");
+  }
+  return -num;
+}
+
+module.exports = negator;
