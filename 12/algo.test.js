@@ -14,7 +14,7 @@ describe("Algo", () => {
     const algorithm = new Algo();
     const result = algorithm.isPalindrome("level");
 
-    expect(result).toBe("level");
+    expect(result).toBe(true);
   });
 
   describe("capitalize", () => {
