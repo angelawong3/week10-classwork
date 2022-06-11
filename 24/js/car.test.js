@@ -1,11 +1,11 @@
 const Car = require("./car");
 
-describe("Car Class", () => {
-  describe("useHorn", () => {
-    it("should print beep", () => {
+describe("Car class", () => {
+  describe("useHorn function", () => {
+    it("should print beep when useHorn is called", () => {
       const mock = jest.spyOn(console, "log");
-      const car = new Car(4, "blue", ["A", "B", "C", "D"]);
 
+      const car = new Car(4, "blue", ["Mo"]);
       car.useHorn();
 
       expect(mock).toBeCalledWith("beep");
@@ -13,14 +13,14 @@ describe("Car Class", () => {
     });
   });
 
-  describe("checkPassenger function", () => {
-    it("should print the remaining as 2", () => {
+  describe("checkPassengers function", () => {
+    it("should print the remaining spaces as 2", () => {
       const mock = jest.spyOn(console, "log");
-      const car = new Car(1, "red", ["Apple", "Orange"]);
+      const car = new Car(1, "red", ["Mo", "Hamed"]);
 
-      car.checkPassenger();
+      car.checkPassengers();
 
-      expect(mock).toBeCalledWith("There are 2 seats left.");
+      expect(mock).toBeCalledWith("There are 2 seats left");
     });
   });
 });

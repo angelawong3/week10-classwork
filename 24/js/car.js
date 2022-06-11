@@ -4,30 +4,27 @@ const Vehicle = require("./vehicle");
 // TODO: Create a `Car` class that extends the `Vehicle` class
 class Car extends Vehicle {
   constructor(id, color, passengers) {
-    const numberOfWheels = 4;
-    const sound = "beep";
+    super(id, 4, "beep");
 
-    super(id, numberOfWheels, sound);
-    this.passengers = carPassengers;
+    this.color = color;
+    this.passengers = passengers;
   }
 
   useHorn() {
-    console.log(`This car's sound is ${this.sound}.`);
+    console.log(this.sound);
   }
 
   checkPassengers() {
-    if (carPassengers.length > 4) {
-      // same as: if(this.passenger.length > 4){
+    if (this.passengers.length >= 4) {
       console.log(
-        `This car only seats 4 people. You have too many passengers!`
+        "This car only seats 4 people. You have too many passengers!"
       );
     } else {
-      console.log(`This car has ${4 - carPassengers.length} seat(s) left.`);
+      const remainingSeats = 4 - this.passengers.length;
+      console.log(`There are ${remainingSeats} seats left`);
     }
   }
 }
-
-module.exports = Car;
 
 const carPassengers = [
   "Aristotle",
@@ -43,3 +40,5 @@ console.log("---CAR---");
 car.printInfo();
 car.useHorn();
 car.checkPassengers();
+
+module.exports = Car;
