@@ -17,14 +17,17 @@ class Car extends Vehicle {
 
   checkPassengers() {
     if (carPassengers.length > 4) {
+      // same as: if(this.passenger.length > 4){
       console.log(
         `This car only seats 4 people. You have too many passengers!`
       );
     } else {
-      console.log(`This car has ${4 - carPassengers.length} seat(s) remain.`);
+      console.log(`This car has ${4 - carPassengers.length} seat(s) left.`);
     }
   }
 }
+
+module.exports = Car;
 
 const carPassengers = [
   "Aristotle",
