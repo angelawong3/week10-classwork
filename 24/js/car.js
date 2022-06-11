@@ -16,7 +16,7 @@ class Car extends Vehicle {
   }
 
   checkPassengers() {
-    if (carPassengers.length > 3) {
+    if (carPassengers.length > 4) {
       console.log(
         `This car only seats 4 people. You have too many passengers!`
       );
